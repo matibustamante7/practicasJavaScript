@@ -1,6 +1,6 @@
 
 
-class Computadora{
+class Computadora {
     constructor(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio) {
         this.procesador = procesador,
             this.placaDeVideo = placaDeVideo,
@@ -15,8 +15,9 @@ class Computadora{
 }
 // console.log(computadora);
 let totalComputadoras = [];
+// let totalComputadorasOriginal = [...totalComputadoras];
 
-const crearNuevaComputadora= (event) => {
+const crearNuevaComputadora = (event) => {
     event.preventDefault();
 
     const procesador = document.getElementById('procesador').value;
@@ -27,19 +28,21 @@ const crearNuevaComputadora= (event) => {
     const fuente = document.getElementById('fuente').value;
     const precio = calcularPrecio();
 
-    const nuevaComputadora= new Computadora(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio)
+    const nuevaComputadora = new Computadora(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio)
     // console.log(nuevacomputadora);
 
     totalComputadoras.push(nuevaComputadora)
-
+    totalComputadorasOriginal = [...totalComputadoras]
     mostrarComputadoras()
+    totalDeLosTotales(precio)
 }
 
 const mostrarComputadoras = () => {
     // console.log(totalComputadoras);
 
     computadorasAgregadas.innerHTML = '';
-
+    // console.log(totalComputadoras);
+    // console.log(totalComputadorasOriginal);
     totalComputadoras?.map((computadora) => {
 
         const divComputadora = document.createElement('div');
@@ -75,13 +78,13 @@ const mostrarComputadoras = () => {
         const precio = document.createElement('p')
         precio.innerHTML = `Precio: $${computadora.precio}`
         divComputadora.appendChild(precio)
-        
+
         computadorasAgregadas.appendChild(divComputadora);
+        return totalComputadoras
     })
 
 
 }
-
 
 
 const calcularPrecio = () => {
@@ -136,18 +139,68 @@ const calcularPrecio = () => {
     const precioFuente = obtenerPrecioFuente();
     precioTotal = precioProcesador + precioPlacaDeVideo + precioAlmacenamiento + precioRam + precioPlacaMadre + precioFuente;
 
-    console.log(`Precio total: ${precioTotal}`);
-    
+    // console.log(`Precio total: ${precioTotal}`);
+
     return precioTotal
 }
 
+let totalDeLosTotalesCount = 0;
+const totalDeLosTotales = (precioTotal) => {
 
-verPrecio.addEventListener('click',  crearNuevaComputadora)
+    const showTotal = document.getElementById('totalDeLosTotales');
 
-// showComputadoras.addEventListener('click', mostrarComputadoras)
-
-// form.addEventListener('submit', crearNuevaComputadora)
-
+    totalDeLosTotalesCount = totalDeLosTotalesCount + precioTotal;
+    showTotal.innerText = `Total: $${totalDeLosTotalesCount}`;
 
 
-// form.addEventListener('submit', crearNuevacomputadora())
+    return totalDeLosTotalesCount
+}
+verPrecio.addEventListener('click', crearNuevaComputadora)
+
+const resetComputadoras = (precioTotal) => {
+
+    precioTotal = precioTotal - 2000
+    console.log(precioTotal);
+
+    // tomo el array de computadoras y elimino el ultimo
+    totalComputadoras.pop(totalComputadoras.length - 1)
+    // despues de eliminar el ultimo vuelvo a mostrar las computadoras pero actualizadas
+    // sin el ultimo elemento eliminado
+    mostrarComputadoras();
+
+}
+
+deleteUltimo.addEventListener('click', resetComputadoras)
+
+
+
+const buscar = document.getElementById('buscar');
+
+// necesito recibir el event que el input esta siendo modificado
+const buscarComputadora = (event) => {
+    // agrego el evento.target.value a una variable para que sea mas amigable el manejo
+    let prodBuscar = event.target.value;
+
+    // realizamos un filter para buscar entre las computadoras creadas por nombre del procesador
+
+    //  devuelve un array con el resultado,
+
+    // si el nuevo array tiene longitud mayor a cero procedemos a asignar nuevamente la variable totalComputadoras con el nuevo array y ejecutamos la funcion para mostrar nuevamente las computadoras posibles
+    if (prodBuscar.length === 0) {
+        // console.log(`no hay para buscar`);
+        totalComputadoras = [...totalComputadorasOriginal]
+        mostrarComputadoras()
+    } else if (prodBuscar.length > 0) {
+        let prodEncontrado = [...totalComputadorasOriginal].filter((producto) => producto.procesador.includes(prodBuscar))
+        totalComputadoras = prodEncontrado
+        mostrarComputadoras()
+    }
+
+}
+
+
+
+
+buscar.addEventListener('input', buscarComputadora)
+
+

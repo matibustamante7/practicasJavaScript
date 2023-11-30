@@ -13,11 +13,10 @@
 
 body{
     display: flex;
-    justify-content: space-around;
-    /* align-items: center; */
-    /* width: 100vw; */
-    /* height: 100vh; */
-    margin: 50px auto;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    gap: 1rem;
+    padding: 2rem;
     background-color: var(--color-lightgrey);
     font-family: 'Poppins', sans-serif;
 }
@@ -26,53 +25,109 @@ body{
 form{
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.2rem;
     align-items: center;
     flex-direction: column;
-    border: 1px solid var(--color-black);
     border-radius: .5rem;
-    /* width: 390px; */
-    height: 35rem;
-    padding: 1rem;
+    width: 30vw;
+    padding: 1.5rem;
+    margin-top: 10%;
+    box-shadow: 0px 0px 20px 2px var(--color-black);
+    
+}
+form h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+select{
+    background-color: #fff;
+    padding: .6rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 14px;
+    width:100%;
+    margin-left: .5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500;
 }
 
+select:hover{
+    transition: .3s;
+    background-color: var(--color-red);
+    color: var(--color-black);
+}
 
-.showComputadoras{
+.showComputadoras, .resetComputadoras{
     border-radius: .5rem;
     background-color: var(--color-grey);
     border: none;
     color: var(--color-black);
-    width: 100%;
-    height: 2.5rem;
+    /* width: 100%; */
+    padding: 1rem;
+    /* height: 2.5rem; */
     background-color: var(--color-grey);
     font-size: 18px
 
 }
-.showComputadoras:hover{
+.showComputadoras:hover, .resetComputadoras:hover {
     cursor: pointer;
-    background-color: var(--color-red);
     transition: .3s;
     color: var(--color-black);
+
+    /* Establecer el fondo como un gradiente radial */
+    background-image: radial-gradient(circle at 50% 50%, #ff9348 0, #ff8649 12.5%, #ff7447 25%, #ff5d43 37.5%, #f23c3c 50%, #e30037 62.5%, #d80037 75%, #cf003a 87.5%, #c90041 100%);
+    background-size: 300% 300%;
+    animation: gradientChange 5s linear infinite;
 }
+
+@keyframes gradientChange {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 300% 300%;
+    }
+}
+
+
 
 .box{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%; 
+    width: 100%; 
+    gap: 1rem;
 }
 
-.computadora{
-    border: 1px solid var(--color-black);
+.computadora {
+    position: relative;
     border-radius: .5rem;
     padding: 1rem;
     color: var(--color-black);
+    box-shadow: 0px 2px 20px 10px var(--color-grey);
+    transition: .3s;
 }
+
+
+
+.computadora:hover {
+    animation: gradientChange 10s linear infinite;
+    background-image: radial-gradient(circle at 50% 50%, #ff9348 0, #ff8649 12.5%, #ff7447 25%, #ff5d43 37.5%, #f23c3c 50%, #e30037 62.5%, #d80037 75%, #cf003a 87.5%, #c90041 100%);
+    background-size: 300% 300%;
+    cursor: default;
+    transition: .3s;
+}
+
 
 #computadorasAgregadas{
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    /* justify-content: space-evenly; */
-    /* align-items: center; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    width: 50vw;
+    /* min-width: 80vw; */
+    /* max-height:100vh; */
+    justify-content: space-evenly;
+    align-items: center;
 }

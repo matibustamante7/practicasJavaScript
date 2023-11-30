@@ -13,6 +13,10 @@
 
 <body>
 
+    <label>Buscar</label>
+    <input type="search" name="buscar" id="buscar" placeholder="Encuentra tu pc ideal">
+    <!-- <button forId="buscar" id="btn_buscar">Buscar</button> -->
+    
     <form action="" id="form">
         <h1>Agregar Computadora</h1>
 
@@ -123,10 +127,11 @@
         </div>
 
 
-        <div class="box">
+        <div class="box btns">
             <!-- <button type="submit" id="btn" class="button">Enviar</button> -->
             <button type="button" id='verPrecio' class="showComputadoras"><p>Calcular Precio</p></button>
-
+            <button type="button" id='deleteUltimo' class="resetComputadoras"><p>Borrar ultimo</p></button>
+            <h3 id="totalDeLosTotales"></h3>
         </div>
 
 
@@ -134,9 +139,7 @@
 
     <!-- <button type="submit" id="showComputadoras" class="showComputadoras">Mostrar computadoras</button> -->
 
-    <div id="computadorasAgregadas">
-
-    </div>
+    <div id="computadorasAgregadas"></div>
 
 
 
