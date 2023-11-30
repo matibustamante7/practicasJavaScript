@@ -45,32 +45,32 @@ const mostrarTiendas = () => {
         const divTiendas = document.createElement('div');
         divTiendas.id = 'tienda';
         divTiendas.className = 'tienda';
+        
+        const nombre = document.createElement('p')
+        nombre.innerHTML =`Nombre: ${tienda.nombre.charAt(0).toUpperCase() + tienda.nombre.slice(1)}`
+        divTiendas.appendChild(nombre)
+        
+        const direccion = document.createElement('p')
+        direccion.innerHTML =`Direccion: ${tienda.direccion.charAt(0).toUpperCase() + tienda.direccion.slice(1)}`
+        divTiendas.appendChild(direccion)
+        
+        const propietario = document.createElement('p')
+        propietario.innerHTML =`Popietario: ${tienda.propietario.charAt(0).toUpperCase() + tienda.propietario.slice(1)}`
+        divTiendas.appendChild(propietario)
 
+    
+        const rubro = document.createElement('p')
+        rubro.innerHTML =`Ubicacion: ${tienda.rubro.charAt(0).toUpperCase() + tienda.rubro.slice(1)}`
+        divTiendas.appendChild(rubro)
 
-        divTiendas.innerHTML = `<p>Tienda: ${tienda.nombre}</p>`;
-        divTiendas.innerHTML = `<p>Ubicacion: ${tienda.direccion}</p>`;
-        divTiendas.innerHTML = `<p>Propietario: ${tienda.propietario}</p>`;
-        divTiendas.innerHTML = `<p>Rubro: ${tienda.rubro}</p>`;
-        divTiendas.innerHTML = `<p>Cantidad de empleados: ${tienda.cantEmpleados}</p>`;
+    
+        const cantEmpleados = document.createElement('p')
+        cantEmpleados.innerHTML =`Empleados: ${tienda.cantEmpleados}`
+        divTiendas.appendChild(cantEmpleados)
 
         contenedorTiendas.appendChild(divTiendas);
     })
 
-
-
-    //    
-
-    //     totalTiendas.map((tienda)=>{
-    //         // console.log(`nombre de la tienda: ${tienda.nombre}`);
-    //         nuevaTiendaResultado.classList.remove('resultadoTienda');
-    //         nuevaTiendaResultado.classList.add('showTienda');
-    //         divTiendas.appendChild(nuevaTiendaResultado)
-    //         showName.innerHTML = tienda.nombre
-    //         showDireccion.innerHTML = tienda.direccion
-    //         showPropietario.innerHTML = tienda.propietario
-    //         showRubro.innerHTML = tienda.rubro
-    //         showEmpleados.innerHTML = tienda.cantEmpleados
-    //     })
 
 }
 

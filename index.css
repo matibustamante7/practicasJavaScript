@@ -75,6 +75,11 @@ form{
 .showTienda p{
     color: red;
 }
+.showTienda:hover{
+    box-shadow: 0px 4px 2px 2px var(--color-black);
+    background-color: var(--color-grey);
+    color:var(--color-red);
+}
 .box{
     display: flex;
     justify-content: space-between;
@@ -83,5 +88,16 @@ form{
 }
 
 .tienda{
-    color: var(--color-red);
+    border: 1px solid var(--color-black);
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--color-black);
+}
+
+#contenedorTiendas{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
 }
