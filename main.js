@@ -1,6 +1,6 @@
 
 
-class Tienda {
+class Computadora{
     constructor(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio) {
         this.procesador = procesador,
             this.placaDeVideo = placaDeVideo,
@@ -13,10 +13,10 @@ class Tienda {
 
 
 }
-// console.log(Tienda);
-let totalTiendas = [];
+// console.log(computadora);
+let totalComputadoras = [];
 
-const crearNuevaTienda = (event) => {
+const crearNuevaComputadora= (event) => {
     event.preventDefault();
 
     const procesador = document.getElementById('procesador').value;
@@ -27,52 +27,56 @@ const crearNuevaTienda = (event) => {
     const fuente = document.getElementById('fuente').value;
     const precio = calcularPrecio();
 
-    const nuevaTienda = new Tienda(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio)
-    // console.log(nuevaTienda);
+    const nuevaComputadora= new Computadora(procesador, placaDeVideo, almacenamiento, ram, placaMadre, fuente, precio)
+    // console.log(nuevacomputadora);
 
-    totalTiendas.push(nuevaTienda)
+    totalComputadoras.push(nuevaComputadora)
+
+    mostrarComputadoras()
 }
 
-const mostrarTiendas = () => {
-    // console.log(totalTiendas);
+const mostrarComputadoras = () => {
+    // console.log(totalComputadoras);
 
-    totalTiendas?.map((tienda) => {
+    computadorasAgregadas.innerHTML = '';
 
-        const divTiendas = document.createElement('div');
-        divTiendas.id = 'tienda';
-        divTiendas.className = 'tienda';
+    totalComputadoras?.map((computadora) => {
+
+        const divComputadora = document.createElement('div');
+        divComputadora.id = 'computadora';
+        divComputadora.className = 'computadora';
 
         const procesador = document.createElement('p')
-        procesador.innerHTML = `Procesador: ${tienda.procesador.charAt(0).toUpperCase() + tienda.procesador.slice(1)}`
-        divTiendas.appendChild(procesador)
+        procesador.innerHTML = `Procesador: ${computadora.procesador.charAt(0).toUpperCase() + computadora.procesador.slice(1)}`
+        divComputadora.appendChild(procesador)
 
         const placaDeVideo = document.createElement('p')
-        placaDeVideo.innerHTML = `Placa de video: ${tienda.placaDeVideo.charAt(0).toUpperCase() + tienda.placaDeVideo.slice(1)}`
-        divTiendas.appendChild(placaDeVideo)
+        placaDeVideo.innerHTML = `Placa de video: ${computadora.placaDeVideo.charAt(0).toUpperCase() + computadora.placaDeVideo.slice(1)}`
+        divComputadora.appendChild(placaDeVideo)
 
         const almacenamiento = document.createElement('p')
-        almacenamiento.innerHTML = `Almacenamiento: ${tienda.almacenamiento.charAt(0).toUpperCase() + tienda.almacenamiento.slice(1)}`
-        divTiendas.appendChild(almacenamiento)
+        almacenamiento.innerHTML = `Almacenamiento: ${computadora.almacenamiento.charAt(0).toUpperCase() + computadora.almacenamiento.slice(1)}`
+        divComputadora.appendChild(almacenamiento)
 
 
         const ram = document.createElement('p')
-        ram.innerHTML = `Memoria RAM: ${tienda.ram}`
-        divTiendas.appendChild(ram)
+        ram.innerHTML = `Memoria RAM: ${computadora.ram}`
+        divComputadora.appendChild(ram)
 
 
         const placaMadre = document.createElement('p')
-        placaMadre.innerHTML = `Placa madre: ${tienda.placaMadre.charAt(0).toUpperCase() + tienda.placaMadre.slice(1)}`
-        divTiendas.appendChild(placaMadre)
+        placaMadre.innerHTML = `Placa madre: ${computadora.placaMadre.charAt(0).toUpperCase() + computadora.placaMadre.slice(1)}`
+        divComputadora.appendChild(placaMadre)
 
         const fuente = document.createElement('p')
-        fuente.innerHTML = `Fuente: ${tienda.fuente.charAt(0).toUpperCase() + tienda.fuente.slice(1)}`
-        divTiendas.appendChild(fuente)
+        fuente.innerHTML = `Fuente: ${computadora.fuente.charAt(0).toUpperCase() + computadora.fuente.slice(1)}`
+        divComputadora.appendChild(fuente)
 
         const precio = document.createElement('p')
-        precio.innerHTML = `Precio: $${tienda.precio}`
-        divTiendas.appendChild(precio)
-
-        contenedorTiendas.appendChild(divTiendas);
+        precio.innerHTML = `Precio: $${computadora.precio}`
+        divComputadora.appendChild(precio)
+        
+        computadorasAgregadas.appendChild(divComputadora);
     })
 
 
@@ -133,16 +137,17 @@ const calcularPrecio = () => {
     precioTotal = precioProcesador + precioPlacaDeVideo + precioAlmacenamiento + precioRam + precioPlacaMadre + precioFuente;
 
     console.log(`Precio total: ${precioTotal}`);
+    
     return precioTotal
 }
 
 
-verPrecio.addEventListener('click',  crearNuevaTienda)
+verPrecio.addEventListener('click',  crearNuevaComputadora)
 
-showTiendas.addEventListener('click', mostrarTiendas)
+// showComputadoras.addEventListener('click', mostrarComputadoras)
 
-// form.addEventListener('submit', crearNuevaTienda)
+// form.addEventListener('submit', crearNuevaComputadora)
 
 
 
-// form.addEventListener('submit', crearNuevaTienda())
+// form.addEventListener('submit', crearNuevacomputadora())
