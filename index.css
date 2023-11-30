@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 :root{
@@ -12,16 +14,30 @@
 }
 
 body{
+    background-color: var(--color-lightgrey);
+}
+header{
+    width: 100vw;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-red);
+    margin-bottom: 100px;
+}
+.searchbar{
     display: flex;
     justify-content: space-evenly;
-    align-items:flex-start;
-    gap: 1rem;
-    padding: 2rem;
-    background-color: var(--color-lightgrey);
-    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    width: 10rem;
 }
-
-
+.content{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 1rem;
+    height: 100vh;
+}
 form{
     display: flex;
     justify-content: space-between;
@@ -29,9 +45,10 @@ form{
     align-items: center;
     flex-direction: column;
     border-radius: .5rem;
-    width: 30vw;
+    width: 30%;
+    height: 40rem;
     padding: 1.5rem;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     box-shadow: 0px 0px 20px 2px var(--color-black);
     
 }
@@ -125,9 +142,29 @@ select:hover{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.4rem;
-    width: 50vw;
+    width: 45%;
     /* min-width: 80vw; */
     /* max-height:100vh; */
     justify-content: space-evenly;
     align-items: center;
+}
+
+footer{
+    margin-top: 2rem;
+    height: 10rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    /* gap: 1.5rem; */
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-black);
+    padding: 1rem;
+}
+footer h3{
+    color: var(--color-grey);
+}
+footer p{
+    width: 32rem;
+    color: var(--color-lightgrey);
 }

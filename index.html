@@ -11,140 +11,159 @@
     <title>Actividad 1</title>
 </head>
 
+
+<header>
+    <div class="searchbar">
+        <label>Buscar</label>
+        <input type="search" name="buscar" id="buscar" placeholder="Encuentra tu pc ideal">
+    </div>
+</header>
+
 <body>
 
-    <label>Buscar</label>
-    <input type="search" name="buscar" id="buscar" placeholder="Encuentra tu pc ideal">
     <!-- <button forId="buscar" id="btn_buscar">Buscar</button> -->
-    
-    <form action="" id="form">
-        <h1>Agregar Computadora</h1>
 
-        <div class="box">
-            <label>Procesador</label>
-            <select id="procesador">
-                <option value="i5" data-precio="200">Intel Core i5</option>
-                <option value="ryzen5" data-precio="180">AMD Ryzen 5</option>
-                <option value="i7" data-precio="300">Intel Core i7</option>
-                <option value="ryzen7" data-precio="250">AMD Ryzen 7</option>
-                <option value="i9" data-precio="500">Intel Core i9</option>
-                <option value="ryzen9" data-precio="450">AMD Ryzen 9</option>
-                <option value="pentium" data-precio="80">Intel Pentium</option>
-                <option value="celeron" data-precio="60">Intel Celeron</option>
-                <option value="athlon" data-precio="100">AMD Athlon</option>
-                <option value="threadripper" data-precio="800">AMD Threadripper</option>
-            </select>
+    <div class="content">
+        <form action="" id="form">
+            <h1>Agregar Computadora</h1>
 
-
-        </div>
-
-        <div class="box">
-            <label>Placa de video</label>
-            <select id="placaDeVideo">
-                <option value="gtx1050" data-precio="150">NVIDIA GeForce GTX 1050</option>
-                <option value="rx570" data-precio="130">AMD Radeon RX 570</option>
-                <option value="gtx1660" data-precio="250">NVIDIA GeForce GTX 1660</option>
-                <option value="rx580" data-precio="200">AMD Radeon RX 580</option>
-                <option value="rtx2060" data-precio="350">NVIDIA GeForce RTX 2060</option>
-                <option value="rx590" data-precio="300">AMD Radeon RX 590</option>
-                <option value="rtx3070" data-precio="500">NVIDIA GeForce RTX 3070</option>
-                <option value="rx6700xt" data-precio="450">AMD Radeon RX 6700 XT</option>
-                <option value="rtx3080" data-precio="700">NVIDIA GeForce RTX 3080</option>
-                <option value="rx6800xt" data-precio="650">AMD Radeon RX 6800 XT</option>
-            </select>
+            <div class="box">
+                <label>Procesador</label>
+                <select id="procesador">
+                    <option value="i5" data-precio="200">Intel Core i5</option>
+                    <option value="ryzen5" data-precio="180">AMD Ryzen 5</option>
+                    <option value="i7" data-precio="300">Intel Core i7</option>
+                    <option value="ryzen7" data-precio="250">AMD Ryzen 7</option>
+                    <option value="i9" data-precio="500">Intel Core i9</option>
+                    <option value="ryzen9" data-precio="450">AMD Ryzen 9</option>
+                    <option value="pentium" data-precio="80">Intel Pentium</option>
+                    <option value="celeron" data-precio="60">Intel Celeron</option>
+                    <option value="athlon" data-precio="100">AMD Athlon</option>
+                    <option value="threadripper" data-precio="800">AMD Threadripper</option>
+                </select>
 
 
-        </div>
+            </div>
 
-        <div class="box">
-            <label>Almacenamiento</label>
-            <select id="almacenamiento">
-                <option value="ssd120gb" data-precio="50">SSD 120GB</option>
-                <option value="ssd240gb" data-precio="80">SSD 240GB</option>
-                <option value="ssd480gb" data-precio="120">SSD 480GB</option>
-                <option value="ssd1tb" data-precio="200">SSD 1TB</option>
-                <option value="hdd500gb" data-precio="40">HDD 500GB</option>
-                <option value="hdd1tb" data-precio="60">HDD 1TB</option>
-                <option value="nvme256gb" data-precio="100">NVMe SSD 256GB</option>
-                <option value="nvme500gb" data-precio="150">NVMe SSD 500GB</option>
-                <option value="nvme1tb" data-precio="250">NVMe SSD 1TB</option>
-                <option value="hybrid2tb" data-precio="80">Hybrid HDD 2TB</option>
-            </select>
-
-
-        </div>
-
-        <div class="box">
-            <label>Memoria RAM</label>
-            <select id="ram">
-                <option value="4gb" data-precio="30">4GB RAM</option>
-                <option value="8gb" data-precio="50">8GB RAM</option>
-                <option value="16gb" data-precio="90">16GB RAM</option>
-                <option value="32gb" data-precio="160">32GB RAM</option>
-                <option value="64gb" data-precio="300">64GB RAM</option>
-                <option value="128gb" data-precio="600">128GB RAM</option>
-                <option value="ddr3" data-precio="40">DDR3 RAM</option>
-                <option value="ddr4" data-precio="60">DDR4 RAM</option>
-                <option value="ddr4x" data-precio="80">DDR4X RAM</option>
-                <option value="lpddr4" data-precio="70">LPDDR4 RAM</option>
-            </select>
+            <div class="box">
+                <label>Placa de video</label>
+                <select id="placaDeVideo">
+                    <option value="gtx1050" data-precio="150">NVIDIA GeForce GTX 1050</option>
+                    <option value="rx570" data-precio="130">AMD Radeon RX 570</option>
+                    <option value="gtx1660" data-precio="250">NVIDIA GeForce GTX 1660</option>
+                    <option value="rx580" data-precio="200">AMD Radeon RX 580</option>
+                    <option value="rtx2060" data-precio="350">NVIDIA GeForce RTX 2060</option>
+                    <option value="rx590" data-precio="300">AMD Radeon RX 590</option>
+                    <option value="rtx3070" data-precio="500">NVIDIA GeForce RTX 3070</option>
+                    <option value="rx6700xt" data-precio="450">AMD Radeon RX 6700 XT</option>
+                    <option value="rtx3080" data-precio="700">NVIDIA GeForce RTX 3080</option>
+                    <option value="rx6800xt" data-precio="650">AMD Radeon RX 6800 XT</option>
+                </select>
 
 
-        </div>
+            </div>
 
-        <div class="box">
-            <label>Placa madre</label>
-            <select id="placaMadre">
-                <option value="b450" data-precio="90">B450</option>
-                <option value="z490" data-precio="120">Z490</option>
-                <option value="x570" data-precio="150">X570</option>
-                <option value="h310" data-precio="60">H310</option>
-                <option value="b550" data-precio="100">B550</option>
-                <option value="b360" data-precio="80">B360</option>
-                <option value="x470" data-precio="110">X470</option>
-                <option value="z390" data-precio="130">Z390</option>
-                <option value="a520" data-precio="70">A520</option>
-                <option value="h470" data-precio="100">H470</option>
-            </select>
-        </div>
-
-        <div class="box">
-            <label>Fuente</label>
-            <select id="fuente">
-                <option value="500w" data-precio="40">500W</option>
-                <option value="600w" data-precio="50">600W</option>
-                <option value="750w" data-precio="80">750W</option>
-                <option value="850w" data-precio="100">850W</option>
-                <option value="1000w" data-precio="120">1000W</option>
-                <option value="1200w" data-precio="150">1200W</option>
-                <option value="evga500" data-precio="45">EVGA 500W</option>
-                <option value="corsair650" data-precio="60">Corsair 650W</option>
-                <option value="seasonic750" data-precio="90">Seasonic 750W</option>
-                <option value="thermaltake850" data-precio="110">Thermaltake 850W</option>
-            </select>
+            <div class="box">
+                <label>Almacenamiento</label>
+                <select id="almacenamiento">
+                    <option value="ssd120gb" data-precio="50">SSD 120GB</option>
+                    <option value="ssd240gb" data-precio="80">SSD 240GB</option>
+                    <option value="ssd480gb" data-precio="120">SSD 480GB</option>
+                    <option value="ssd1tb" data-precio="200">SSD 1TB</option>
+                    <option value="hdd500gb" data-precio="40">HDD 500GB</option>
+                    <option value="hdd1tb" data-precio="60">HDD 1TB</option>
+                    <option value="nvme256gb" data-precio="100">NVMe SSD 256GB</option>
+                    <option value="nvme500gb" data-precio="150">NVMe SSD 500GB</option>
+                    <option value="nvme1tb" data-precio="250">NVMe SSD 1TB</option>
+                    <option value="hybrid2tb" data-precio="80">Hybrid HDD 2TB</option>
+                </select>
 
 
-        </div>
+            </div>
+
+            <div class="box">
+                <label>Memoria RAM</label>
+                <select id="ram">
+                    <option value="4gb" data-precio="30">4GB RAM</option>
+                    <option value="8gb" data-precio="50">8GB RAM</option>
+                    <option value="16gb" data-precio="90">16GB RAM</option>
+                    <option value="32gb" data-precio="160">32GB RAM</option>
+                    <option value="64gb" data-precio="300">64GB RAM</option>
+                    <option value="128gb" data-precio="600">128GB RAM</option>
+                    <option value="ddr3" data-precio="40">DDR3 RAM</option>
+                    <option value="ddr4" data-precio="60">DDR4 RAM</option>
+                    <option value="ddr4x" data-precio="80">DDR4X RAM</option>
+                    <option value="lpddr4" data-precio="70">LPDDR4 RAM</option>
+                </select>
 
 
-        <div class="box btns">
-            <!-- <button type="submit" id="btn" class="button">Enviar</button> -->
-            <button type="button" id='verPrecio' class="showComputadoras"><p>Calcular Precio</p></button>
-            <button type="button" id='deleteUltimo' class="resetComputadoras"><p>Borrar ultimo</p></button>
-            <h3 id="totalDeLosTotales"></h3>
-        </div>
+            </div>
+
+            <div class="box">
+                <label>Placa madre</label>
+                <select id="placaMadre">
+                    <option value="b450" data-precio="90">B450</option>
+                    <option value="z490" data-precio="120">Z490</option>
+                    <option value="x570" data-precio="150">X570</option>
+                    <option value="h310" data-precio="60">H310</option>
+                    <option value="b550" data-precio="100">B550</option>
+                    <option value="b360" data-precio="80">B360</option>
+                    <option value="x470" data-precio="110">X470</option>
+                    <option value="z390" data-precio="130">Z390</option>
+                    <option value="a520" data-precio="70">A520</option>
+                    <option value="h470" data-precio="100">H470</option>
+                </select>
+            </div>
+
+            <div class="box">
+                <label>Fuente</label>
+                <select id="fuente">
+                    <option value="500w" data-precio="40">500W</option>
+                    <option value="600w" data-precio="50">600W</option>
+                    <option value="750w" data-precio="80">750W</option>
+                    <option value="850w" data-precio="100">850W</option>
+                    <option value="1000w" data-precio="120">1000W</option>
+                    <option value="1200w" data-precio="150">1200W</option>
+                    <option value="evga500" data-precio="45">EVGA 500W</option>
+                    <option value="corsair650" data-precio="60">Corsair 650W</option>
+                    <option value="seasonic750" data-precio="90">Seasonic 750W</option>
+                    <option value="thermaltake850" data-precio="110">Thermaltake 850W</option>
+                </select>
 
 
-    </form>
+            </div>
 
-    <!-- <button type="submit" id="showComputadoras" class="showComputadoras">Mostrar computadoras</button> -->
 
-    <div id="computadorasAgregadas"></div>
+            <div class="box btns">
+                <!-- <button type="submit" id="btn" class="button">Enviar</button> -->
+                <button type="button" id='verPrecio' class="showComputadoras">
+                    <p>Calcular Precio</p>
+                </button>
+                <button type="button" id='deleteUltimo' class="resetComputadoras">
+                    <p>Borrar ultimo</p>
+                </button>
+                <h3 id="totalDeLosTotales"></h3>
+            </div>
+
+
+        </form>
+
+        <!-- <button type="submit" id="showComputadoras" class="showComputadoras">Mostrar computadoras</button> -->
+
+        <div id="computadorasAgregadas"></div>
+    </div>
 
 
 
 
 </body>
+
+<!-- <footer>
+    <h3>Matias Bustamante</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero at, laudantium aperiam repudiandae consectetur
+        ratione et ipsam nulla, dolorum eligendi ut sunt, sapiente aliquam necessitatibus qui! Consequatur obcaecati
+        dolor eveniet!</p>
+</footer> -->
 
 <script src="main.js"></script>
 
