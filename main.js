@@ -198,9 +198,25 @@ const buscarComputadora = (event) => {
 
 }
 
-
-
-
 buscar.addEventListener('input', buscarComputadora)
 
 
+
+
+const showName = () => {
+    const guardarPcs = (clave, valor) => { localStorage.setItem(clave, valor) }
+
+
+    // almacenar objetos por separado
+    for (const computadora of totalComputadoras) {
+        guardarPcs(computadora.id, JSON.stringify(computadora))
+        // console.log(computadora);
+    }
+
+    // almacenar array completo
+    const arrpcs = guardarPcs("listaComputadoras", JSON.stringify(totalComputadoras))
+
+    console.log(arrpcs);
+}
+
+nombreee.addEventListener('click', showName)
